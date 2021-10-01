@@ -1,24 +1,21 @@
-﻿import orderByProps from '../app'
+import orderByProps from '../app';
 
-test('for..in',()=>{
-    const obj = {
-        name: 'мечник', 
-        health: 10, 
-        level: 2, 
-        attack: 80, 
-        defence: 40
-    }
+test('for..in', () => {
+  const obj = {
+    name: 'мечник',
+    health: 10,
+    level: 2,
+    attack: 80,
+    defence: 40,
+  };
 
+  const result = [
+    { key: 'name', value: 'мечник' },
+    { key: 'level', value: 2 },
+    { key: 'attack', value: 80 },
+    { key: 'defence', value: 40 },
+    { key: 'health', value: 10 },
+  ];
 
-    const result = [
-        {key: "name", value: "мечник"}, 
-        {key: "level", value: 2}, 
-        {key: "attack", value: 80}, 
-        {key: "defence", value: 40},
-        {key: "health", value: 10} 
-      ];
-
-    
-    expect(orderByProps(obj,["name", "level"])).toStrictEqual(result);
-
+  expect(orderByProps(obj, ['name', 'level'])).toStrictEqual(result);
 });
